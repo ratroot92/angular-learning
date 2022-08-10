@@ -1,6 +1,6 @@
 export interface RegisterRequestInterface{
-  user:{  username:string
+    username:string
     email:string
     password:string
-  }
+    mobile:number
 }

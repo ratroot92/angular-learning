@@ -1,8 +1,8 @@
+
 export interface CurrentUserInterface{
     _id:string
     email:string,
-    createdAt:string
-    updatedAt:string
+    mobile:number
     username:string
-    mobile:string|null
+    role:{_id:string,name:string}
 }

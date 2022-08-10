@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
-import { map, Observable } from "rxjs";
+import { catchError, map, Observable } from "rxjs";
 import { CurrentUserInterface } from "src/app/shared/types/currentUser.interface";
 import { RegisterRequestInterface } from "../types/registerRequest.interface";
 import { environment } from "src/environments/environment";
@@ -14,12 +14,12 @@ export class AuthService{
     }
 
     register(data:RegisterRequestInterface):Observable<CurrentUserInterface>{
-        const url=environment.authApiUrl+"/register";
-        return this.http.post<AuthResponseInterface>(url,data).pipe((map(
-            (response:AuthResponseInterface)  =>response.user)
+        const url=environment.authApiUrl+"/auth/register";
+        console.log("=================================")
+        console.log("data",data)
+        console.log("=================================")
 
-            ))
-
-
+        return this.http.post<AuthResponseInterface>(url,data)
+        .pipe((map((response:any)=>response.data)))
     }
 }
