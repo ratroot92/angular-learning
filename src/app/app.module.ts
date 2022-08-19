@@ -11,10 +11,20 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import {EffectsModule} from '@ngrx/effects'
 import {AuthInterceptor} from 'src/app/shared/interceptors/auth.interceptor'
 import {PersistenceService} from './shared/services/persistence.service'
+import {NavbarSwitchModule} from 'src/app/shared/modules/header-navbar-modules/navbar-switch/switch.module'
+import {NavbarEnvironmentModule} from './shared/modules/header-navbar-modules/navbar-environment/navbar-environment.module'
+import {NavbarOopModule} from './shared/modules/header-navbar-modules/navbar-oop/navbar-oop.module'
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    //
+
+    NavbarSwitchModule,
+    NavbarEnvironmentModule,
+    NavbarOopModule,
+
+    //
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

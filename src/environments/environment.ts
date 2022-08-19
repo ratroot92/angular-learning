@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  authApiUrl:'http://0.0.0.0:8000/api'
-};
+  authApiUrl: 'http://0.0.0.0:8000/api',
+  sharedHeader: {theme: 'dark'},
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,0 +1,12 @@
+<div [ngSwitch]="inputProps?.appName">
+  <demo-navbar-switch-admin-navbar
+    *ngSwitchCase="'admin'"
+    (appNameChanged)="onAppnameChanged($event)"
+    [inputProps]="inputProps"
+  ></demo-navbar-switch-admin-navbar>
+  <demo-navbar-switch-client-navbar
+    *ngSwitchCase="'client'"
+    (appNameChanged)="onAppnameChanged($event)"
+    [inputProps]="inputProps"
+  ></demo-navbar-switch-client-navbar>
+</div>
